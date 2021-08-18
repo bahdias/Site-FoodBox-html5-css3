@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <!--Configurando o Site-->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width-device-width, initial-scale-1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <title>FoodBox</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link
+        href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;700&display=swap" 
+        rel="stylesheet"/>
+
+        <!--Configurações CSS-->
+        <style>
+            body{
+                background: #e5e5e5;
+                font-family: "Roboto";
+            }
+            .Topo{
+                background: #cf2b2b;
+                color: white;
+                padding: 15px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px 0 #bbbbbb;
+            }
+            .Produto{
+                background: white;
+                padding: 15px;
+                border-radius: 10px;
+                margin-bottom: 10px;
+                box-shadow: 0 0 10px 0 #bbbbbb;
+                cursor: pointer;
+                border: 5px solid white;
+            }
+            img{
+                margin-left: 15px;
+                width: 130px;
+                border-radius: 5px;
+                float: right;
+            }
+            h1{
+                margin:0;
+                font-family: "Righteous";
+                font-weight: normal;
+            }
+            h2{
+                margin:0;
+                font-size: 18px;
+                font-weight: normal;
+            }
+            h3{
+                font-size: 30px;
+                margin-bottom: 15px;
+                font-family: "Righteous";
+                font-weight: normal;
+            }
+            h4{
+                color: black;
+                margin-top: 0px;
+                font-size: 20px;
+                margin-bottom: 5px;
+            }
+            p{
+                margin: 15px 0 0 0;
+                color: black;
+            }
+            .preco{
+                font-weight: bold;
+                font-size: 18px
+            }
+            .botao{
+                background: #0b940b;
+                text-align: center;
+                padding: 15px;
+                margin-top: 30px;
+                margin-bottom: 100 px;
+                border-radius: 50px;
+                color: white;
+                font-weight: bold;
+                font-size: 18px;
+                width: auto;
+                cursor: pointer;
+            }
+            a{
+                color: white;
+                text-decoration: none;
+            }
+            
+        </style>
+    </head>
+    <!--Adicionando o Conteúdo-->
+    <body>
+        <div class="Topo">
+            <h1>FoodBox</h1>
+            <h2>Monte seu box e receba em 15 minutos!</h2>
+        </div>
+
+        <h3>Primeiro, seu prato</h3>
+        <div id="Frango" class="Produto" onclick="escolher_frango()">
+            <img src="Imagens/frango.jpg" alt="Frango"/>
+            <h4>Frango Yin-Yang</h4>
+            <p>Um pouco de batata, um pouco de salada</p>
+            <p class="preco">R$ 19,90</p>
+        </div>
+        <div id="Carne" class="Produto" onclick="escolher_carne()">
+            <img src="Imagens/carne.jpg" alt="Carne"/>
+            <h4>Carne com Salada</h4>
+            <p>Partida ao meio para parecer mais carne</p>
+            <p class="preco">R$ 24,90</p>
+        </div>
+
+        <h3>Agora sua bebida</h3>
+        <div id="Refri" class="Produto" onclick="escolher_refrigerante()">
+            <img src="Imagens/refrigerante.jpg" alt="Refrigerante"/>
+            <h4>Coca-Cola Geladinha</h4>
+            <p>Normal, zero ou stevia. Vai na sorte</p>
+            <p class="preco">R$ 5,90</p>
+        </div>
+        <div id="Suco" class="Produto" onclick="escolher_suco()">
+            <img src="Imagens/suco.jpg" alt="Suco"/>
+            <h4>Suco Natural</h4>
+            <p>Temos de vários sabores inclusive o de groselha e o de guaraná</p>
+            <p class="preco">R$ 3,90</p>
+        </div>
+
+        <h3>Por fim, sua sobremesa</h3>
+        <div id="Pudim" class="Produto" onclick="escolher_pudim()">
+            <img src="Imagens/pudim.jpg" alt="Pudim"/>
+            <h4>Pudim</h4>
+            <p>Apenas um lindo e brilhante pudim</p>
+            <p class="preco">R$ 7,90</p>
+        </div>
+        <div id="Sorvete" class="Produto" onclick="escolher_sorvete()">
+            <img src="Imagens/sorvete.jpg" alt="Sorvete"/>
+            <h4>Sorvete bem Gelado</h4>
+            <p>Sorvetes Atesanais, sabor blue-ice, creme e chocolate</p>
+            <p class="preco">R$ 6,90</p>
+        </div>
+
+        <div class="botao" onclick="finalizar_pedido()">
+            <a href="Finalizar.html">Finalizar Pedido</a>
+        </div>
+
+        <script>
+            let prato;
+            let bebida;
+            let sobremesa;
+            function escolher_frango() {
+                document.getElementById("Frango").style.borderColor="green";
+                document.getElementById("Carne").style.borderColor="white";
+                prato="Frango";
+            }
+            function escolher_carne(){
+                document.getElementById("Carne").style.borderColor="green";
+                document.getElementById("Frango").style.borderColor="white";
+                prato="Carne";
+            }
+
+            function escolher_refrigerante() {
+                document.getElementById("Refri").style.borderColor="green";
+                document.getElementById("Suco").style.borderColor="white";
+                bebida ="Refrigerante";
+            }
+            function escolher_suco(){
+                document.getElementById("Suco").style.borderColor="green";
+                document.getElementById("Refri").style.borderColor="white";
+                bebida = "Suco";
+            }
+
+            function escolher_pudim() {
+                document.getElementById("Pudim").style.borderColor="green";
+                document.getElementById("Sorvete").style.borderColor="white";
+                sobremesa = "Pudim";
+            }
+            function escolher_sorvete(){
+                document.getElementById("Sorvete").style.borderColor="green";
+                document.getElementById("Pudim").style.borderColor="white";
+                sobremesa = "Sorvete";
+            }
+
+            function finalizar_pedido(){
+            }
+        </script>
+    </body>
+</html>
